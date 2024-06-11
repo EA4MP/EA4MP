@@ -5,9 +5,9 @@ from datetime import datetime
 import csv
 import concurrent.futures
 
+# calculate total update pac in different years
 
-# 以线程池的形式实现获取每周更新的包
-# 初始化计数器
+
 count_2020 = 0
 count_2021 = 0
 count_2022 = 0
@@ -73,8 +73,6 @@ def process_row(row):
                         print(file_name)
                         print(url)
                         print(file_size/1024/1024, "MB")
-                        # if file_size/1024/1024 < 10:
-                        #     download_file(url, os.path.join(download_path, file_name))
                         print("**********************")
 
         if flag_2020:
@@ -88,15 +86,14 @@ def process_row(row):
     except Exception as e:
         print(f"get {package_name} update information wrong since {e}")
 
-# 使用线程池
+
 with open(csv_file_name, "r") as file:
     reader = csv.reader(file)
-    rows = list(reader)  # 将文件内容转换为列表
+    rows = list(reader) 
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.map(process_row, rows)
 
-# 打印计数结果
 print(f"2020: {count_2020}, 2021: {count_2021}, 2022: {count_2022}, 2023: {count_2023}")
 print(f"2020: {count_pac_2020}, 2021: {count_pac_2021}, 2022: {count_pac_2022}, 2023: {count_pac_2023}")
 print(f"the num of update pac is totally about :{count_update}")
