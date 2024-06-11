@@ -1,3 +1,4 @@
+# you can test the fine_tuning model with this script
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 from sklearn.metrics import classification_report
