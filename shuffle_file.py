@@ -1,16 +1,13 @@
 import random
 
+# In order to reduce the effect of randomness on the results, we perform a disruption operation on the collated sequence
 
 def shuffle_lines(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         lines = f.readlines()
-
-    # 打乱行
     random.shuffle(lines)
-
     with open(output_file, 'w', encoding='utf-8') as f:
         f.writelines(lines)
 
 
-# 使用函数
-shuffle_lines(r'F:\TrainClassfier\src\test5.txt', r'F:\TrainClassfier\src\test5_shuffle.txt')
+shuffle_lines(r'file_input.txt', r'file_output.txt')
