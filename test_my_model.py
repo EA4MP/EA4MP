@@ -3,36 +3,36 @@ import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 from sklearn.metrics import classification_report
 
-# 加载微调后的BERT模型和tokenizer
-model_path = r'F:\TrainClassfier\my_classifier_model'  # 替换为你的模型路径
-tokenizer = BertTokenizer.from_pretrained(r"F:\TrainClassfier\bert-base-cased")
+# load fine_tuning BERT model and tokenizer
+model_path = r'...\my_classifier_model'  # your bert model path
+tokenizer = BertTokenizer.from_pretrained(r"\bert-base-cased") # load config file
 model = BertForSequenceClassification.from_pretrained(model_path)
-model.eval()  # 设置模型为评估模式
+model.eval() 
 torch.manual_seed(42)
-torch.cuda.manual_seed(42)
+torch.cuda.manual_seed(42)  # random seed
 
 
-# 读取测试集并准备输入数据
+# read data
 def prepare_input_data(text):
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
     return inputs
 
 
-# 读取测试集文件
-with open(r'F:\TrainClassfier\src\test_shuffle1.txt', 'r', encoding='utf-8') as file:
+# test file path 
+with open(r'...\test_shuffle1.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-# 提取文本和标签
+# get data and label
+# divided
 texts = []
 labels = []
 for line in lines:
-    # 假设label始终在最后一行且格式为",label: X"
     parts = line.strip().split(',label: ')
     texts.append(parts[0])
     labels.append(int(parts[1]))
 count_all = 0
 
-# 使用模型进行预测
+# predict
 predictions = []
 with torch.no_grad():
     for text in texts:
@@ -44,13 +44,12 @@ with torch.no_grad():
         predictions.append(preds.item())
         print(f"{count_all}:{preds.item()}")
 
-# 计算指标
+# calculate
 labels = torch.tensor(labels)
 predictions = torch.tensor(predictions)
 report = classification_report(labels, predictions, target_names=['Class 0', 'Class 1'])
 print(report)
 
-# 提取正确率、召回率和F1分数
 lines = report.split('\n')
 for line in lines:
     if 'accuracy' in line:
