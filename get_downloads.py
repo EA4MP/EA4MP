@@ -1,6 +1,10 @@
 import pypistats
 from pprint import pprint
 
+# pypistats can help us get the total download of every package that you want to know
+
+# some usefull apis
+
 # Call the API
 # print(pypistats.recent("pillow"))
 # print(pypistats.recent("pillow", "day", format="markdown"))
