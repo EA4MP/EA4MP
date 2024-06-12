@@ -4,10 +4,9 @@ import json
 from str_2_json import metadata_to_json
 
 
-pac_path = r"F:\benSample-dcp"
-license_list = ['MIT', 'UNKNOWN', 'Eclipse', 'Apache', 'ZPL', 'apache2', 'BSD', 'MPL-2.0', 'APACHE', 'license', 'LICENSE.txt', 'GPLv3', 'GNU', 'gpl-3.0.txt', 'GPL', 'New', 'Dual', 'Copyright', 'Apache-2.0', 'request', 'SentinelOne']
+pac_path = r""
+license_list = ['MIT', 'Eclipse', 'Apache', 'ZPL', 'apache2', 'BSD', 'MPL-2.0', 'APACHE', 'license', 'LICENSE.txt', 'GPLv3', 'GNU', 'gpl-3.0.txt', 'GPL', 'New', 'Dual', 'Copyright', 'Apache-2.0', 'request', 'SentinelOne']
 for file_name in os.listdir(pac_path):
-    # 判断是否为文件夹
     if os.path.isdir(os.path.join(pac_path, file_name)):
         try:
             with open(os.path.join(pac_path, file_name, "PKG-INFO"), "r", encoding="utf-8") as f:
