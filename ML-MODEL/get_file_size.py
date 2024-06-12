@@ -1,6 +1,4 @@
-# 选取文件的大小作为评价标准之一，依据：恶意包的总是倾向于使用更轻量化的大小来引诱用户下载
 
-# 将包的大小按照以下标准进行区分：
 # 0-100KB：0
 # 100KB-1MB：1
 # 1MB-5MB：2
@@ -19,11 +17,7 @@ def get_folder_size(folder_path):
 
 
 def get_file_size(file_path):
-    """
-    获取文件大小
-    :param file_path: 文件路径
-    :return: 文件大小
-    """
+
     if not os.path.exists(file_path):
         return False
     file_size = get_folder_size(file_path)
@@ -40,6 +34,6 @@ def get_file_size(file_path):
         return 5
 
 
-file_path = "F:\javademo1"
+file_path = ""
 # get_file_size(file_path)
 print(get_file_size(file_path))
