@@ -25,12 +25,15 @@ We referenced the methodology used to train the word embedding model in the pape
 Since this tool only needs to use the model once to sort the sequence of function calls and not again to sort the output of the function control flow graph, you only need to train the first model. Of course, if you choose not to sort the function call sequences and generate code behavior sequences directly, we have also implemented this method in the code, and you can comment out parts of the code to achieve direct generation of code behavior sequences. (It should be noted that the direct code generation may have an impact on the final result of certain)
 
 1. Code behavior sequence generation and BERT model fine-tuning:
+After you have prepared all the data and made the corresponding substitutions to the file addresses in the code, you can do the following in the seq_process folder:
+Python my_seq_gemerator_thread.py
 
 
-2. Metadata Feature Extraction and ML Model Training
+
+3. Metadata Feature Extraction and ML Model Training
 
 
-3. Model Ensembling
+4. Model Ensembling
 
 
 
