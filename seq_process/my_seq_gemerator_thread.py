@@ -12,13 +12,18 @@ from scipy.spatial.distance import cosine
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# This part implements the batch extraction of code behavior sequences from packages to be inspected
 
-WE_model_path = datapath("/home/banxiangao/Desktop/MPHunter-main/test/my_model")
+# In order to speed up the extraction of the code's behavioral sequences, in this step we only provide behavioral sequence extraction for the two largest .py files in the code package
+# of course, you can easily replace this portion of the content to achieve the detection of the entire package.
+
+
+WE_model_path = datapath("") 
 print("start to load our model!")
 model = FastText.load(WE_model_path)
 print("load model successfully")
 
-with open("/home/banxiangao/Desktop/MPHunter-main/test/base_vec.pkl", "rb") as sensitive_func_file:
+with open("", "rb") as sensitive_func_file:
     base_vec = pickle.load(sensitive_func_file)
     base_vec = [float(x) for x in base_vec]
 
@@ -103,7 +108,7 @@ def process_package(package_path):
 
 
 if __name__ == "__main__":
-    folder_path = r"/home/banxiangao/Desktop/test"
+    folder_path = r""
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         package_paths = [os.path.join(folder_path, file_name) for file_name in os.listdir(folder_path)]
@@ -118,7 +123,7 @@ if __name__ == "__main__":
         for future in concurrent.futures.as_completed(futures):
             package_path = futures[future]
             try:
-                future.result(timeout=8)  # Set a timeout of 15 seconds
+                future.result(timeout=8) 
             except concurrent.futures.TimeoutError:
                 print(f"Timeout occurred while processing package {package_path}. Skipping to the next package.")
             except Exception as e:
