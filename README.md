@@ -15,7 +15,7 @@ d.An Empirical Study of Malicious Code In PyPI Ecosystem
 Among them, article (d) publishes the largest known dataset of malicious packets, which already includes more than 5,000+ malicious packets, and you can easily access them.
 
 About benign packages: 
-You can randomly download benign packages from pypi, and as a rule, we make packages that have been hosted for more than 90 days and have more than 1,000 downloads benign. The number of downloads and hosting duration can be easily retrieved from the package's json file, which we've posted in a.py file
+You can randomly download benign packages from pypi, and as a rule, we make packages that have been hosted for more than 90 days and have more than 1,000 downloads benign. The number of downloads and hosting duration can be easily retrieved from 'https://pypi.org/pypi/{package_name}/json', which we've posted in the get_meta_information.py file
 
 (2) A word embedding model based on the fasttext model.
 
