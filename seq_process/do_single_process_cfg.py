@@ -14,9 +14,7 @@ def uncanonical_do_func(pyfile):
     try:
         cg_ret = main(output=PROJECT_DIR + "/DataShare/ApiSeq_and_Result/cg.json", fasten=True,
                   entry_point=[pyfile])
-        # print(ret_list)
-        # cmd2 = "sed -i '1d' " + data_dir + "/need_analyse_list.txt"
-        # os.system(cmd2)
+        
         file_list = cg_ret[2]
         call_dict = cg_ret[3]
         print(pyfile + " cgfile_list_len:" + str(len(file_list)))
@@ -31,11 +29,9 @@ def uncanonical_do_func(pyfile):
 @func_set_timeout(30)
 def do_func(pyfile, model, sensitive_func_v_list):
     try:
-        cg_ret = main(output=PROJECT_DIR + "/DataShare/ApiSeq_and_Result/cg.json", fasten=True,
+        cg_ret = main(output=PROJECT_DIR + "", fasten=True,
                   entry_point=[pyfile])
-        # print(ret_list)
-        # cmd2 = "sed -i '1d' " + data_dir + "/need_analyse_list.txt"
-        # os.system(cmd2)
+        
         file_list = cg_ret[2]
         call_dict = cg_ret[3]
         print(pyfile + " cgfile_list_len:" + str(len(file_list)))
@@ -68,12 +64,12 @@ def do_process_cg_cfg(file_list, data_dir, model=None, sensitive_func_v_list=Non
 
 def load_WE_model(model_dir, WE_model_name, WE_proj_name, mode):
 
-    WE_model_file_dir = datapath("/home/banxiangao/Desktop/MPHunter-main/test/my_model")
+    WE_model_file_dir = datapath("")
     print("model loading: start\n\nPlease wait patiently\n")
     model = FastText.load(WE_model_file_dir)
     print("model loading: complete")
 
-    with open("/home/banxiangao/Desktop/MPHunter-main/test/base_vec.pkl", "rb") as sensitive_func_file:
+    with open("", "rb") as sensitive_func_file:
         base_vec = pickle.load(sensitive_func_file)
         base_vec = [float(x) for x in base_vec]
 
@@ -89,10 +85,10 @@ def do_cmd_process_main(datashare_path, package_name, folder, proj_name, model_d
     ret_list = do_process_cg_cfg(file_list, data_dir, model, sensitive_func_v_list)
 
     ################
-    fp_cg = open("/home/banxiangao/Desktop/MPHunter-main/test" + id + "_cg_output.txt", "w+")
-    fp_dfs = open("/home/banxiangao/Desktop/MPHunter-main/test" + id + "_dfs_output.txt", "w+")
-    fp_bfs = open("/home/banxiangao/Desktop/MPHunter-main/test" + id + "_bfs_output.txt", "w+")
-    print("/home/banxiangao/Desktop/MPHunter-main/test" + id + "_output.txt")
+    fp_cg = open("" + id + "_cg_output.txt", "w+")
+    fp_dfs = open("" + id + "_dfs_output.txt", "w+")
+    fp_bfs = open("" + id + "_bfs_output.txt", "w+")
+    print("" + id + "_output.txt")
     for i in ret_list:
         fp_cg.write(i[0])
         fp_dfs.write(i[1])
