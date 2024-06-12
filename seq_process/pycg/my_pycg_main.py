@@ -10,11 +10,6 @@ from SourceCode.SequenceGenerator.pycg.utils.constants import CALL_GRAPH_OP, KEY
 def main(output=None, fasten=False, entry_point=[], package=None, product="", forge="PyPI", version="", timestamp=0,
         max_iter=-1, operation=CALL_GRAPH_OP, as_graph_output=None):
 
-    # dir = os.path.dirname(os.path.realpath(__file__))       # lwt
-    # with open(dir + "/config.txt", 'w') as fp:
-    #     outputdir = output.split("/")[:-1]
-    #     outputdir = "/".join(outputdir)
-    #     fp.write(outputdir)
 
     cg = CallGraphGenerator(entry_point, package,
                         max_iter, operation)
@@ -53,15 +48,14 @@ def main(output=None, fasten=False, entry_point=[], package=None, product="", fo
 
 
 if __name__ == "__main__":
-    # ret = main(output="/home/liang/Desktop/workspace/type01/DataShare/ApiSeq_and_Result/cg.json", fasten=True,
-    #            entry_point=["/home/liang/Mount/workspace/DataShare2/Packages/Unpackages_test/2022-requests-3.0.0/2022-requests-3.0.0/setup.py"])
-    ret, output_json, file_list, call_list = main(output="/home/banxiangao/Desktop/MPHunter-main/DataShare/MISC/cg.json", fasten=True,
-               entry_point=["/home/banxiangao/Desktop/MPHunter-main/DataShare/Packages/mal/antchain_sdk_dog-1.0.0/setup.py"])
+
+    ret, output_json, file_list, call_list = main(output="", fasten=True,
+               entry_point=[""])
     print(ret)
     print("\n\n")
     # print(output_json)
     print(file_list)
     print(call_list)
-    with open("/home/banxiangao/Desktop/MPHunter-main/test/call_list.txt", "w+") as f:
+    with open("", "w+") as f:
         f.write(json.dumps(call_list))
     f.close()
