@@ -6,7 +6,7 @@ import tarfile
 import shutil
 
 
-dst_dir = "/home/banxiangao/Desktop/MPHunter-main/DataShare/Packages/pyfile"
+dst_dir = ""
 def scan_file(path_dir):
     filenames = tuple([os.path.join(path_dir, f) for f in os.listdir(path_dir) if os.path.isfile(os.path.join(path_dir, f))])
     # for filename in filenames:
@@ -46,8 +46,8 @@ def move_py_file(src_dir, dst_dir):
 #
 # move_py_file(PATH, dst_dir)
 
-final_dir = "/home/banxiangao/Desktop/MPHunter-main/DataShare/MISC"
-pyfile_dir = "/home/banxiangao/Desktop/MPHunter-main/DataShare/Packages/pyfile"
+final_dir = ""
+pyfile_dir = ""
 pyfile_names = scan_file(pyfile_dir)
 ret_list = []
 sum = 1
@@ -78,7 +78,7 @@ for pyfile_name in pyfile_names:
 count = 0
 print(sum_default)
 print(sum_success)
-with open("/home/banxiangao/Desktop/MPHunter-main/DataShare/ApiSeq_and_Result/Result/WordEmbedding/test/output_connected.txt", "a") as fp:
+with open("", "a") as fp:
     for i in ret_list:
         fp.write(i)
         count += 1
