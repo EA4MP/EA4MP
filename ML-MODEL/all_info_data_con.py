@@ -1,33 +1,33 @@
 import os
 import re
 pattern = r'\/.*\.py'
+# Avoid package names, file information on the BERT model generates
 
+# combine behavior sequences and metadata feature vec
 def process_files(file1_path, file2_path):
-    # 1. 读取并处理1.txt文件
+
     processed_lines = []
     with open(file1_path, 'r') as f1:
         lines = f1.readlines()
         for line in lines:
             line = line.strip()
             if line and not line.endswith(":"):
-                line = line.replace(".........DataSet.dcp_malSample", "")
+                line = line.replace("...", "")
                 processed_line = re.sub(pattern, "", line)
                 processed_lines.append(processed_line)
         data = "".join(processed_lines)
-    # print("data:", data)
-    # 2. 读取2.txt文件，将数组元素以逗号分隔并合并为单行字符串
+
     with open(file2_path, 'r') as f2:
         array_data = f2.read()
         vector_str = "".join(array_data.split())
         # print("vector_str:", vector_str)
-    # 3. 将处理后的两段字符串拼接在一起，确保在同一行
     combined_data = "[CLS]" + data + "[SEP]" + " ," + vector_str
-    # print("combined_data:", combined_data)
+
 
     return combined_data
 
 
-folder_path = r"/home/banxiangao/Desktop/DataSet/dcp_malSample"
+folder_path = r""
 for file_name in os.listdir(folder_path):
     if os.path.isdir(os.path.join(folder_path, file_name)):
         print(f"start to ex pac {file_name} info!")
@@ -42,10 +42,9 @@ for file_name in os.listdir(folder_path):
 
         print("success wirte the info you want!")
 
-#
-# file1_path = "dfs_out.txt"
-# file2_path = "feature_vec.txt"
-#
-# combined_data = process_files(file1_path, file2_path)
-# # print(combined_data)
-# print("success wirte the info you want!")
+file1_path = ""
+file2_path = ""
+
+combined_data = process_files(file1_path, file2_path)
+print(combined_data)
+print("success wirte the info you want!")
