@@ -15,7 +15,7 @@ with open(csv_file_name, "r") as file:
             downloads = data["data"][0]["downloads"]
             if downloads > 1000:
                 print(pac_name)
-                famous_csv_file_name = r"F:\TrainClassfier\src\NBProcess\famous.csv"
+                famous_csv_file_name = r"famous.csv"
                 with open(famous_csv_file_name, "a") as famous_file:
                     famous_file.write(pac_name + "\n")
             else:
