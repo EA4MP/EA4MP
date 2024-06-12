@@ -1,11 +1,9 @@
-# 本部分用来验证包名相似度
+
 import pandas as pd
 import os
 
 def damerau_levenshtein_distance(s1, s2):
-    """
-    计算两个字符串之间的Damerau-Levenshtein距离
-    """
+
     len_s1, len_s2 = len(s1), len(s2)
     d = [[0] * (len_s2 + 1) for _ in range(len_s1 + 1)]
 
@@ -29,9 +27,7 @@ def damerau_levenshtein_distance(s1, s2):
 
 
 def similarity_score(s1, s2):
-    """
-    计算两个字符串之间的相似度分数
-    """
+
     distance = damerau_levenshtein_distance(s1, s2)
     max_length = max(len(s1), len(s2))
     similarity = 1 - distance / max_length
