@@ -1,4 +1,4 @@
-# 查看全部的license
+
 import os
 import json
 from str_2_json import metadata_to_json
