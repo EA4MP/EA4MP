@@ -14,16 +14,13 @@ This file is used to generate the static control flow graph of the python file.
 """
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# /home/banxiangao/Desktop/MPHunter-main
-# /media/banxiangao/503A6F9C3A6F7E3A/weekly_update/dcp_24_04_18
-# mal_path = "/home/banxiangao/Desktop/MPHunter-main/dataSet/mal"
 
-WE_model_path = datapath("/home/banxiangao/Desktop/MPHunter-main/test/my_model")
+WE_model_path = datapath("")
 print("start to load our model!")
 model = FastText.load(WE_model_path)
 print("load model successfully")
 
-with open("/home/banxiangao/Desktop/MPHunter-main/test/base_vec.pkl", "rb") as sensitive_func_file:
+with open("", "rb") as sensitive_func_file:
     base_vec = pickle.load(sensitive_func_file)
     base_vec = [float(x) for x in base_vec]
 
@@ -89,7 +86,7 @@ def find_top_2_pyfile(folder_path):
 dfs_diff = 0
 bfs_diff = 0
 count = 0
-folder_path = "/media/banxiangao/503A6F9C3A6F7E3A/weekly_update/dcp_24_04_18"
+folder_path = ""
 for file_name in os.listdir(folder_path):
     count += 1
     print(f"start to analysis NO.{count} package!")
@@ -102,34 +99,17 @@ for file_name in os.listdir(folder_path):
             print(dst_path)
             try:
                 ret, output_json, filelist, call_list = generate_cg(final_file, dst_path)
-                dfs_out, bfs_out = staticfg_main([final_file], call_list, model, base_vec)
-                # dfs_out_path = os.path.join(folder_path, "dfs_out_con.txt")
-                # print(dfs_out_path)
-                # bfs_out_path = os.path.join(folder_path, "bfs_out_con.txt")
+                dfs_out = staticfg_main([final_file], call_list, model, base_vec)
                 e_dfs_out_path = os.path.join(file_path, "dfs_out.txt")
-                e_bfs_out_path = os.path.join(file_path, "bfs_out.txt")
                 with open(e_dfs_out_path, "a") as e_file_dfs:
                     e_file_dfs.write(dfs_out)
                     e_file_dfs.write("\n")
                 e_file_dfs.close()
-                with open(e_bfs_out_path, "a") as e_file_bfs:
-                    e_file_bfs.write(bfs_out)
-                    e_file_bfs.write("\n")
-                e_file_bfs.close()
-                dfs_out_un, bfs_out_un = uncanonical_staticfg_main([final_file], call_list)
-                if dfs_out_un == dfs_out:
-                    print("dfs same!")
-                else:
-                    dfs_diff += 1
-                    print("dfs different!")
 
-                if bfs_out_un == bfs_out:
-                    print("bfs same!")
-                else:
-                    bfs_diff += 1
-                    print("bfs different!")
+            
+                # If you don't want to train the word embedding model, then comment out the previous code and call this function
+                # dfs_out_un, bfs_out_un = uncanonical_staticfg_main([final_file], call_list)  
             except Exception as e:
                 print(e)
 
-print(dfs_diff)
-print(bfs_diff)
+
