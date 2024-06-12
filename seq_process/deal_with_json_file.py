@@ -1,11 +1,10 @@
 import json
 from datetime import datetime
-# 打开并读取JSON文件
-with open('meta4_info.json', 'r') as file:
+# same as get_meta_information.py
+with open('meta_info.json', 'r') as file:
     data = json.load(file)
 file.close()
 
-# 遍历数据并输出成对的name和age
 for version, releases in data['releases'].items():
     # print(f"Version: {version}")
     for release in releases:
