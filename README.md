@@ -12,6 +12,7 @@ Before you reproduce our tool, you must first prepare the following:
         - World of Code: An Infrastructure for Mining the Universe of Open Source VCS Data
         - Towards Measuring Supply Chain Attacks on Package Managers for Interpreted Languages
         - An Empirical Study of Malicious Code In PyPI Ecosystem
+   
     Among them, article (d) publishes the largest known dataset of malicious packets, which includes more than 5,000+ malicious packets.
 
     - **Benign Packages**: You can randomly download benign packages from PyPI. As a rule, we consider packages hosted for more than 90 days and with more than 1,000 downloads as benign. The number of downloads and hosting duration can be retrieved from `https://pypi.org/pypi/{package_name}/json`, which we've utilized in the `get_meta_information.py` file.
