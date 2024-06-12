@@ -5,25 +5,20 @@ from str_2_json import metadata_to_json
 import os
 import re
 import json
-# 读取已经收集到的恶意作者名
+
 author_list = []
-with open(r"F:\TrainClassfier\src\NBProcess\Metadata-feature-extraction\author_set.txt", "r") as f:
+with open(r"author_set.txt", "r") as f:
     for line in f:
         author_list.append(line.strip())
 
-
-# 获取良性流行包的包名，用作后续包名相似度的检测
 popular_packages = []
-with open(r"F:\TrainClassfier\src\NBProcess\famous.csv", "r") as f:
+with open(r"famous.csv", "r") as f:
     for line in f:
         popular_packages.append(line.strip())
 
 
 def extract_package_name(package_name):
-    # 定义匹配规则
     pattern = r'^([a-zA-Z0-9_-]+?)-\d+(\.\d+)*$'
-
-    # 使用正则表达式进行匹配
     match = re.match(pattern, package_name)
     if match:
         return match.group(1)
@@ -31,19 +26,18 @@ def extract_package_name(package_name):
         return None
 
 
-pac_path = r"F:\benSample-dcp"
+pac_path = r""
 for file_name in os.listdir(pac_path):
-    # 判断是否为文件夹
+
     if os.path.isdir(os.path.join(pac_path, file_name)):
         print(file_name)
         feature_list = []
-        # 获取文件大小,并将文件大小的分类加入特征向量
-        # print(get_file_size(os.path.join(pac_path, file_name)))
+
         if get_file_size(os.path.join(pac_path, file_name)):
             size_result = get_file_size(os.path.join(pac_path, file_name))
             feature_list.append(size_result - 1)
 
-        # 这一步开始计算包名相似度
+
         with open(os.path.join(pac_path, file_name, "PKG-INFO"), "r", encoding="utf-8") as f:
             metadata_text = f.read()
         json_data = metadata_to_json(metadata_text)
@@ -58,7 +52,6 @@ for file_name in os.listdir(pac_path):
         similarity_result = calculate_similarity(popular_packages, pac_name)
         feature_list.append(similarity_result)
 
-        # 判断作者是否为恶意作者
         try:
             json_file = json.loads(json_data)
             if "Author" in json_file:
@@ -81,7 +74,6 @@ for file_name in os.listdir(pac_path):
             author_flag = 3
             feature_list.append(author_flag)
 
-        # 判断元数据版本号和版本号是否可疑（1开头，正常，异常大的数字开头）Metadata-Version 、Version
         try:
             json_file = json.loads(json_data)
             if "Metadata-Version" in json_file:
@@ -131,7 +123,6 @@ for file_name in os.listdir(pac_path):
             else:
                 Version_flag = 3
                 feature_list.append(Version_flag)
-        # 判断是否有Home-page信息（有无）
         try:
             json_file = json.loads(json_data)
             if "Home-page" in json_file:
@@ -147,7 +138,6 @@ for file_name in os.listdir(pac_path):
         else:
             Home_page_flag = 1
             feature_list.append(Home_page_flag)
-        # 判断是否有Summary属性（有、无、乱写）
         try:
             json_file = json.loads(json_data)
             if "Summary" in json_file:
@@ -166,7 +156,6 @@ for file_name in os.listdir(pac_path):
                 if len(word) > 15:
                     Summary_flag = 2
             feature_list.append(Summary_flag)
-        # 判断是否有Author-email属性（有、无）
         try:
             json_file = json.loads(json_data)
             if "Author-email" in json_file:
@@ -181,7 +170,6 @@ for file_name in os.listdir(pac_path):
         else:
             Author_email_flag = 1
             feature_list.append(Author_email_flag)
-        # 判断是否有License属性（合规、不合规、无）
         try:
             json_file = json.loads(json_data)
             if "License" in json_file:
@@ -196,7 +184,6 @@ for file_name in os.listdir(pac_path):
         else:
             License_flag = 1
             feature_list.append(License_flag)
-        # 判断是否有Description属性（有、无）
         try:
             json_file = json.loads(json_data)
             if "Description" in json_file:
@@ -213,7 +200,6 @@ for file_name in os.listdir(pac_path):
             Description_flag = 1
             feature_list.append(Description_flag)
 
-        # 设置良性恶意性标签，用于后续训练和检验
         mal_ben_flag = 0
         feature_list.append(mal_ben_flag)
         with open("ben-feature.txt", 'a', encoding='utf-8') as f:
