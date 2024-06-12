@@ -4,7 +4,6 @@ from pycg.my_pycg_main import main
 from func_timeout import func_set_timeout
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# 获取一个脚本的cg图
 
 
 @func_set_timeout(20)
