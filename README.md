@@ -34,9 +34,11 @@ Before you reproduce our tool, you must first prepare the following:
     The script will automate the code behavior sequence extraction for all your pending packages using a thread pool. To speed up the reproduction, we have simplified the code behavior sequence extraction by identifying the files in the package and scanning only the two largest script files including `setup.py` (we will scan `setup.py` regardless of its size). Through our real-world testing, the sequences extracted this way are sufficient.
 
    - You can run this script to fine_tuning your own BERT model.
+     
      ```sh
     python fine_tune_with_GPU.py
     ```
+    
     Before you try to fine_tuning the BERT model, you need to download the pre_trained BERT model from [huggingface](https://huggingface.co/google-bert).You can choose the BERT_base or BERT_large.  It's worth noting that fine-tuning the BERT_large model took much longer (over 8 hours of running on a V100, 32GB GPU).
 
 2. **Metadata Feature Extraction and ML Model Training**
