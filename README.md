@@ -27,10 +27,9 @@ Before you reproduce our tool, you must first prepare the following:
 
 1. **Code Behavior Sequence Generation and BERT Model Fine-tuning**:
     - After you have prepared all the data and made the corresponding substitutions to the file addresses in the code, run the following in the `seq_process` folder:
-   
-    ```sh
-    python my_seq_generator_thread.py
-    ```
+      ```sh
+      python my_seq_generator_thread.py
+      ```
     The script will automate the code behavior sequence extraction for all your pending packages using a thread pool. To speed up the reproduction, we have simplified the code behavior sequence extraction by identifying the files in the package and scanning only the two largest script files including `setup.py` (we will scan `setup.py` regardless of its size). Through our real-world testing, the sequences extracted this way are sufficient.
 
    - You can run this script to fine_tuning your own BERT model.
