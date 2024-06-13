@@ -49,9 +49,16 @@ Before you reproduce our tool, you must first prepare the following:
     python train_NB_classifier.py
     python train_svm_classifier.py
     ```
-
-
+    The trained models will be automatically saved in the directory you specified.
+    Note: For privacy reasons, we have hidden the specific file paths. However, based on the code information, we believe you can easily fill in the required file paths.    
 3. **Model Ensembling**
+
+我们在Ensemble文件夹下提供了两种不同的ensemble方式：adaboost集成算法；默认权重值相等，都为1/2
+    ```sh
+    python Ensemble_Classifier.py
+    python ensemble_classifier_with_equal_weight.py
+    ```
+注意：你需要在对BERT 模型进行微调，并将ML模型训练完成后再执行此操作：
 
 
 
