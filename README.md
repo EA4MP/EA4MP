@@ -39,7 +39,16 @@ Before you reproduce our tool, you must first prepare the following:
     Before you try to fine_tuning the BERT model, you need to download the pre_trained BERT model from [huggingface](https://huggingface.co/google-bert). You can choose the BERT_base or BERT_large.  It's worth noting that fine-tuning the BERT_large model took much longer (over 8 hours of running on a V100, 32GB GPU).
 
 2. **Metadata Feature Extraction and ML Model Training**
+    In the `ML-MODEL` folder, we provide methods for extracting metadata feature vectors and training scripts for four major machine learning models. You can follow the provided code, fill in the corresponding file paths, and then execute the following scripts:
 
+    ```sh
+    python feature_ex.py
+    cd train
+    python train_DT_classifier.py
+    python train_RF_classifier.py
+    python train_NB_classifier.py
+    python train_svm_classifier.py
+    ```
 
 
 3. **Model Ensembling**
