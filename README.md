@@ -11,7 +11,7 @@ Before you reproduce our tool, you must first prepare the following:
         - Backstabber’s Knife Collection: A Review of Open Source Software Supply Chain Attacks
         - World of Code: An Infrastructure for Mining the Universe of Open Source VCS Data
         - Towards Measuring Supply Chain Attacks on Package Managers for Interpreted Languages
-        - An Empirical Study of Malicious Code In PyPI Ecosystem
+        - An Empirical Study of Malicious Code In PyPI Ecosystem [pypi_malregistry](https://github.com/lxyeternal/pypi_malregistry)
    
     Among them, article (d) publishes the largest known dataset of malicious packets, which includes more than 5,000+ malicious packets.
 
