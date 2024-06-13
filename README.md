@@ -52,14 +52,15 @@ Before you reproduce our tool, you must first prepare the following:
     The trained models will be automatically saved in the directory you specified.
     Note: For privacy reasons, we have hidden the specific file paths. However, based on the code information, we believe you can easily fill in the required file paths.    
 3. **Model Ensembling**
+We provide two different ensemble methods in the `Ensemble` folder: the AdaBoost ensemble algorithm and an ensemble method with equal weights (each model's weight is 1/2).
 
-我们在Ensemble文件夹下提供了两种不同的ensemble方式：adaboost集成算法；默认权重值相等，都为1/2
+To run these ensemble methods, execute the following scripts:
+
     ```sh
     python Ensemble_Classifier.py
     python ensemble_classifier_with_equal_weight.py
     ```
-注意：你需要在对BERT 模型进行微调，并将ML模型训练完成后再执行此操作：
 
-
+Note: You need to fine-tune the BERT model and complete the ML model training before executing these scripts.
 
 Follow these steps to reproduce the tool and validate its effectiveness in detecting malicious PyPI packages.
