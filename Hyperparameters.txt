@@ -1,0 +1,22 @@
+learning rate: 1e-5
+padding=True
+truncation=True
+max_length=512
+batch_size = 8
+epoch=8
+Gradient Accumulation Steps=1
+Weight Decay=0.01
+adam_beta1=0.9
+adam_beta2=0.999
+adam_epsilon=1e-8
+hidden_dropout_prob=0.1
+
+for bert-base:
+Hidden Layers: 12
+Hidden size: 768
+Attention heads: 12
+
+for bert-large:
+Hidden Layers: 24
+Hidden size: 1024
+Attention heads: 16
