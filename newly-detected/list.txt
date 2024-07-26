@@ -18,7 +18,7 @@ bughunter9-9.23
 cinemax-1.0.6
 click8-8.0.1
 commm-1.0.0
-configr-2018.2004.2239
+configr-2018.2024.2239
 confiig-0.1.0
 Cryptographic-0.0.1
 docker-compose42-1.26.0.dev0
@@ -102,11 +102,11 @@ watchdog3 66.0.3
 watchdog42-0.9.0
 web3py-0.1.1
 web3py-0.1.190426
-web3py-0.1.20190705.2
-web3py-0.1.20190705.3
-web3py-0.1.20190705
-web3py-0.1.20190709.1
-web3py-0.1.20190718.1
+web3py-0.1.20240328.2
+web3py-0.1.201240328.3
+web3py-0.1.20240328
+web3py-0.1.20240401.1
+web3py-0.1.20240407.1
 web3x
 weba 0.0.50
 websocat 1.13.0
