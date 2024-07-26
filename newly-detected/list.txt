@@ -5,14 +5,6 @@ attr-dicts 1.0.3
 beautifulsoup442-4.8.2
 bofo3-1.24.57
 botocore42-1.13.39
-bu9-9.22
-bu9-9.23
-bu9-9.24
-bu9-9.25
-bu9-9.27
-bu9-9.28
-bu9-9.29
-bu9-9.30
 bughunter9-9.22
 bughunter9-9.23
 cinemax-1.0.6
@@ -117,3 +109,11 @@ xOracle-1.0.2
 xOracle-1.0.3
 yoyomigrations
 zxcvb-0.1
+bu9-9.22
+bu9-9.23
+bu9-9.24
+bu9-9.25
+bu9-9.27
+bu9-9.28
+bu9-9.29
+bu9-9.30
