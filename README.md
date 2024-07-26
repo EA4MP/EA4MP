@@ -6,7 +6,7 @@
 ## Hyperparaments
 The hyperparameters for our model are publicly available. You can find them in the `Hyperparaments.txt` file on our GitHub repository. To access the file, click on the following link:
 
-- [Hyperparaments.txt](https://github.com/EA4MP/EA4MP/edit/main/Hyperparaments.txt)
+- [Hyperparaments.txt](https://github.com/EA4MP/EA4MP/blob/main/Hyperparameters.txt)
 
 Feel free to edit or download the file as needed.
 
