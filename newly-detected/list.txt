@@ -109,11 +109,4 @@ xOracle-1.0.2
 xOracle-1.0.3
 yoyomigrations
 zxcvb-0.1
-bu9-9.22
-bu9-9.23
-bu9-9.24
-bu9-9.25
-bu9-9.27
-bu9-9.28
-bu9-9.29
-bu9-9.30
+
