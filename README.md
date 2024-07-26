@@ -11,7 +11,8 @@ Feel free to edit or download the file as needed.
 
 ## new detected malicious packages
 we public the newly-detected malicious package list at:
--[list.txt](https://github.com/EA4MP/EA4MP/edit/main/newly-detected/list.txt)
+
+- [list.txt](https://github.com/EA4MP/EA4MP/edit/main/newly-detected/list.txt)
 
 
 You can reproduce our tool according to the following steps:
