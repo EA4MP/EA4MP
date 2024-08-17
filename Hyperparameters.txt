@@ -20,3 +20,17 @@ for bert-large:
 Hidden Layers: 24
 Hidden size: 1024
 Attention heads: 16
+
+
+DT model:
+criterion: gini
+splitter: best
+max_depth: None	
+min_samples_split: 2	
+min_samples_leaf:	1
+max_features:	None
+max_leaf_nodes:	None
+min_impurity_decrease:	0.0
+class_weight:	None
+random_state:	42	
+ccp_alpha:	0.0	
