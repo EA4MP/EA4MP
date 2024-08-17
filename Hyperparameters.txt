@@ -27,47 +27,47 @@ criterion: gini
 splitter: best
 max_depth: None	
 min_samples_split: 2	
-min_samples_leaf:	1
-max_features:	None
-max_leaf_nodes:	None
-min_impurity_decrease:	0.0
-class_weight:	None
-random_state:	42	
-ccp_alpha:	0.0	
+min_samples_leaf: 1
+max_features: None
+max_leaf_nodes: None
+min_impurity_decrease: 0.0
+class_weight: None
+random_state: 42	
+ccp_alpha: 0.0	
 
 
 NB-MODEL:
-priors:	None
-var_smoothing:	1e-9
-random_state:	42	
+priors: None
+var_smoothing: 1e-9
+random_state: 42	
 
 
 
 RF-MODEL:
-n_estimators:	100	
+n_estimators: 100	
 criterion:	'gini'	
-max_depth:	200
-min_samples_split:	2	
-min_samples_leaf:	1	
-min_weight_fraction_leaf:	0.0	
-max_features:	'auto'	
-max_leaf_nodes:	None	
-min_impurity_decrease:	0.0	
-bootstrap:	True	
-oob_score:	False
-n_jobs:	None
+max_depth: 200
+min_samples_split: 2	
+min_samples_leaf: 1	
+min_weight_fraction_leaf: 0.0	
+max_features: 'auto'	
+max_leaf_nodes: None	
+min_impurity_decrease: 0.0	
+bootstrap:	 True	
+oob_score: False
+n_jobs: None
 random_state: 42
-verbose:	0
-warm_start:	False	
-class_weight:	None	
+verbose: 0
+warm_start: False	
+class_weight: None	
 
 
 
 svm-model
 C: 1.0	
-kernel：'rbf'	
-degree：3	
-gamma 'rbf'	
+kernel: 'rbf'	
+degree: 3	
+gamma: 'rbf'	
 coef0: 0.0	
 shrinking: True	
 probability: False	
