@@ -34,3 +34,9 @@ min_impurity_decrease:	0.0
 class_weight:	None
 random_state:	42	
 ccp_alpha:	0.0	
+
+
+NB-MODEL:
+priors:	None
+var_smoothing:	1e-9
+random_state:	42	
