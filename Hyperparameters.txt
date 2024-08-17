@@ -64,19 +64,19 @@ class_weight:	None
 
 
 svm-model
-C	1.0	
+C: 1.0	
 kernel：'rbf'	
 degree：3	
-gamma：'rbf'	
-coef0:0.0	
+gamma 'rbf'	
+coef0: 0.0	
 shrinking: True	
 probability: False	
 tol: 1e-3	
-cache_size:	200	
-class_weight:	None	
-verbose:	False	
-max_iter:	-1	
-decision_function_shape:	'ovr'	
-break_ties:	False	
-random_state:	42
+cache_size: 200	
+class_weight: None	
+verbose: False	
+max_iter: -1	
+decision_function_shape: 'ovr'	
+break_ties: False	
+random_state: 42
 
