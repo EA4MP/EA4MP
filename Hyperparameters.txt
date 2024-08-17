@@ -63,7 +63,7 @@ class_weight:	None
 
 
 
-
+svm-model
 C	1.0	
 kernel：'rbf'	
 degree：3	
