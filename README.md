@@ -3,17 +3,6 @@
 
 <h1 style="background-color: yellow; color: red; padding: 15px;">New Add</h1>
 
-## Hyperparaments
-The hyperparameters for our model are publicly available. You can find them in the `Hyperparaments.txt` file on our GitHub repository. To access the file, click on the following link:
-
-- [Hyperparaments.txt](https://github.com/EA4MP/EA4MP/blob/main/Hyperparameters.txt)
-
-Feel free to edit or download the file as needed.
-
-## new detected malicious packages
-we public the newly-detected malicious package list at:
-
-- [list.txt](https://github.com/EA4MP/EA4MP/blob/main/newly-detected/list.txt)
 
 
 ### You can reproduce our tool according to the following steps:
