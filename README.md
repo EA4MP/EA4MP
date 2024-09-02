@@ -54,8 +54,9 @@ Before you reproduce our tool, you must first prepare the following:
     python train_svm_classifier.py
     ```
     The trained models will be automatically saved in the directory you specified.
-    Note: For privacy reasons, we have hidden the specific file paths. However, based on the code information, we believe you can easily fill in the required file paths.    
-3. **Model Ensembling**
+    Note: For privacy reasons, we have hidden the specific file paths. However, based on the code information, we believe you can easily fill in the required file paths.
+    Note: On the latest dataset, we note that guo et al. have updated nearly 7000 new malicious packages, and our validation of the new dataset reveals that the validity of the NB model shows a significant decrease, while the validity of the RF model is relatively stable, so if you want to apply the tool to a real-world application, we would prefer to recommend that you train the RF model.
+4. **Model Ensembling**
     We provide two different ensemble methods in the `Ensemble` folder: the AdaBoost ensemble algorithm and an ensemble method with equal weights (each model's weight is 1/2).
 
     To run these ensemble methods, execute the following scripts:
