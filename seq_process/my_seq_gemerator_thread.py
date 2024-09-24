@@ -3,9 +3,9 @@ import os
 import pickle
 import time
 
-from SourceCode.SequenceGenerator.staticfg.builder import CFGBuilder
-from SourceCode.SequenceGenerator.staticfg.staticfg_main import staticfg_main, uncanonical_staticfg_main
-from SourceCode.SequenceGenerator.pycg.my_pycg_main import main
+from staticfg.builder import CFGBuilder
+from staticfg.staticfg_main import staticfg_main, uncanonical_staticfg_main
+from pycg.my_pycg_main import main
 from gensim.models import FastText
 from gensim.test.utils import datapath
 from scipy.spatial.distance import cosine
