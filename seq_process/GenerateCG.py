@@ -1,5 +1,5 @@
 
-from SourceCode.SequenceGenerator.pycg.my_pycg_main import main
+from pycg.my_pycg_main import main
 
 import os
 import tarfile
